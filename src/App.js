@@ -10,6 +10,8 @@ const toggleToDo = id => {
     const updateState = (prevState) => {
         const updatedTodos = prevState.todos.map(todo => {
             todo = JSON.parse(JSON.stringify(todo))
+            console.log(JSON.stringify(todo));
+
             if (todo.id === id) {
                 todo.completed = !todo.completed
             }
