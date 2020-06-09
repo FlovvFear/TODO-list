@@ -10,8 +10,6 @@ const toggleToDo = id => {
     const updateState = (prevState) => {
         const updatedTodos = prevState.todos.map(todo => {
             todo = JSON.parse(JSON.stringify(todo))
-            console.log(JSON.stringify(todo));
-
             if (todo.id === id) {
                 todo.completed = !todo.completed
             }
@@ -40,8 +38,7 @@ class App extends React.Component {
   render() {
     //   return (<Test/>)
       const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
-      
-      
+    //   Не очень понимаю как работает handleChange={this.handleChange}
       return (
           <div className="main-wrap">
               {todoItems}

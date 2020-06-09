@@ -10,7 +10,7 @@ function TodoItem  (props) {
     return (
         <div className="item">
             <input className="input" type="checkbox" checked={props.item.completed} onChange={() => props.handleChange(props.item.id)}/>
-            <span style={props.item.completed ? completedStyle: null}>{props.item.text}</span>
+            <span style={props.item.completed ? completedStyle: null}>{props.item.text} ({props.item.text.toString().length} символов)</span>
             {/* как расшифровывается код строкой выше? и как это можно переписать в более понятный код с использованием if */}
         </div>
     )
